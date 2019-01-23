@@ -9,9 +9,13 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
  *
  * 如果完全控制Spring WebFlux，可以添加自己的@Configuration注释@EnableWebFlux。
  */
+@Configuration
 public class WebFluxConfig implements WebFluxConfigurer {
 
-
+ @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    }
 
 
 
