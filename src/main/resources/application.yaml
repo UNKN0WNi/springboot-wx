@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: webflux
+  webflux:
+    static-path-pattern: / resources / **
+server:
+  port: 8080
