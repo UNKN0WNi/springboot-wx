@@ -1,4 +1,4 @@
-package com.xiaoyilin.Utils;
+package com.wxpublic.Utils;
 
 public class WeChatContant {
     //APPID

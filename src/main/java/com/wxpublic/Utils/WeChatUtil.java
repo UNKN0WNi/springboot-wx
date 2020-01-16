@@ -1,7 +1,7 @@
-package com.xiaoyilin.Utils;
+package com.wxpublic.Utils;
 
 import com.thoughtworks.xstream.XStream;
-import com.xiaoyilin.domain.*;
+import com.wxpublic.domain.*;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;

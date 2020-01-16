@@ -1,4 +1,4 @@
-package com.xiaoyilin;
+package com.wxpublic;
 
 public class ThisDemo {
 

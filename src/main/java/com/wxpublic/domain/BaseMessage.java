@@ -1,6 +1,5 @@
-package com.xiaoyilin.domain;
+package com.wxpublic.domain;
 
-import com.xiaoyilin.Utils.WeChatContant;
 import lombok.Getter;
 import lombok.Setter;
 

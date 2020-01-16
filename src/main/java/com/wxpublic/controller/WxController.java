@@ -1,8 +1,8 @@
-package com.xiaoyilin.controller;
+package com.wxpublic.controller;
 
-import com.xiaoyilin.Utils.CheckUtil;
-import com.xiaoyilin.Utils.WeChatContant;
-import com.xiaoyilin.Utils.WeChatUtil;
+import com.wxpublic.Utils.CheckUtil;
+import com.wxpublic.Utils.WeChatContant;
+import com.wxpublic.Utils.WeChatUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

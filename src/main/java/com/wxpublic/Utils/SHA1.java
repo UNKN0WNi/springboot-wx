@@ -1,4 +1,4 @@
-package com.xiaoyilin.Utils;
+package com.wxpublic.Utils;
 
 import java.security.MessageDigest;
 

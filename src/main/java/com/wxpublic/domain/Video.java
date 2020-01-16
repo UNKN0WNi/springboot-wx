@@ -1,4 +1,4 @@
-package com.xiaoyilin.domain;
+package com.wxpublic.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
