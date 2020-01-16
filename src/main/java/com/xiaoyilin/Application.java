@@ -11,7 +11,6 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplicationBuilder().sources(Application.class).bannerMode(Banner.Mode.OFF).build(args);
-        springApplication.setWebApplicationType(WebApplicationType.REACTIVE);
         springApplication.run();
     }
 
