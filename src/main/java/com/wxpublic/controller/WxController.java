@@ -3,6 +3,14 @@ package com.wxpublic.controller;
 import com.wxpublic.Utils.CheckUtil;
 import com.wxpublic.Utils.WeChatContant;
 import com.wxpublic.Utils.WeChatUtil;
+import com.wxpublic.config.Constants;
+import com.wxpublic.domain.AccessTokenVO;
+import com.wxpublic.domain.WeixinResponseResult;
+import com.wxpublic.domain.menu.*;
+import com.wxpublic.impl.IMenuService;
+import com.wxpublic.impl.IWeixinService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +29,15 @@ import java.util.Map;
  * @since 2020-01-11 14:25
  */
 @RestController
+@Slf4j
 public class WxController {
+
+    @Autowired
+    private IMenuService menuService;
+
+
+    @Autowired
+    private IWeixinService weixinService;
 
     @GetMapping("/verify_wx_token")
     public void login(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
@@ -44,18 +60,8 @@ public class WxController {
     }
 
     @PostMapping("/verify_wx_token")
-    public String handler(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//        request.setCharacterEncoding("UTF-8");
-//        response.setCharacterEncoding("UTF-8");
-//        Map<String, String> parseXml = MessageUtil.parseXml(request);
-//        String msgType = parseXml.get("MsgType");
-//        String content = parseXml.get("Content");
-//        String fromusername = parseXml.get("FromUserName");
-//        String tousername = parseXml.get("ToUserName");
-//        System.out.println(msgType);
-//        System.out.println(content);
-//        System.out.println(fromusername);
-//        System.out.println(tousername);
+    public String handler(HttpServletRequest request, HttpServletResponse response) {
+
         // xml格式的消息数据
         String respXml = null;
         // 默认返回的文本消息内容
@@ -123,8 +129,9 @@ public class WxController {
                 }
             }
             mes = mes == null ? "不知道你在干嘛" : mes;
-            if(respXml == null)
+            if(respXml == null) {
                 respXml = WeChatUtil.sendTextMsg(requestMap, mes);
+            }
             System.out.println(respXml);
             return respXml;
         } catch (Exception e) {
@@ -133,5 +140,9 @@ public class WxController {
         return "";
 
     }
+
+
+
+
 
 }
